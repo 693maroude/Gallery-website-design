@@ -38,18 +38,20 @@ for (i = 0; i < 15; i++) {
   setTimeout(addpic, 0);
 }
 
+//try implementing with pseudo class on gallery_item_after
 item_touched = (itemIndex) => {
-  let gallery_item_after =
-    document.getElementsByClassName("gallery-item-after")[itemIndex];
-  let opacity = window
-    .getComputedStyle(gallery_item_after)
-    .getPropertyValue("opacity");
-  console.log(opacity);
-  if (opacity !== "0") {
-    gallery_item_after.style.opacity = 0;
-  } else {
-    gallery_item_after.style.opacity = 1;
-  }
+  console.log(`item ${itemIndex} touched`);
+  // let gallery_item_after =
+  //   document.getElementsByClassName("gallery-item-after")[itemIndex];
+  // let opacity = window
+  //   .getComputedStyle(gallery_item_after)
+  //   .getPropertyValue("opacity");
+  // console.log(opacity);
+  // if (opacity !== "0") {
+  //   gallery_item_after.style.opacity = 0;
+  // } else {
+  //   gallery_item_after.style.opacity = 1;
+  // }
 };
 
 transformScroll = (event) => {

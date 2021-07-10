@@ -96,6 +96,7 @@ body {
   object-fit: cover;
 }
 
+/* to do - implement hover feedback for this class for touch screen with media query of max-width */
 .gallery-item-after {
   position: absolute;
   top: 0;
@@ -115,8 +116,7 @@ body {
   transition: opacity 0.2s;
 }
 
-.gallery-item:hover .gallery-item-after,
-.gallery-item:focus .gallery-item-after {
+.gallery-item:hover .gallery-item-after {
   opacity: 1;
   transition: opacity 0.4s;
 }
