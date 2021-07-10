@@ -15,6 +15,7 @@
   text-transform: uppercase;
   font-family: var(--font);
   letter-spacing: 3px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
