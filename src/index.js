@@ -22,7 +22,7 @@ addpic = () => {
   div.setAttribute("ontouchstart", `item_touched(${index})`);
   div.innerHTML = `
   <img class="gallery-item-img" src="https://source.unsplash.com/random/?${search[index]}"/>
-  <div class="gallery-item-after-0 gallery-item-after">
+  <div class="gallery-item-after">
     <div class="gallery-item-after-label">labels</div>
     <div class="gallery-item-after-body">
       <div class="gallery-item-after-title">Title</div>
@@ -41,27 +41,15 @@ for (i = 0; i < 15; i++) {
 item_touched = (itemIndex) => {
   let gallery_item_after =
     document.getElementsByClassName("gallery-item-after")[itemIndex];
-  if (gallery_item_after.className.indexOf("gallery-item-after-0") >= 0) {
-    console.log("changed opacity to 1 ", gallery_item_after.className);
-    gallery_item_after.classList.remove("gallery-item-after-0");
-    gallery_item_after.classList.add("gallery-item-after-1");
+  let opacity = window
+    .getComputedStyle(gallery_item_after)
+    .getPropertyValue("opacity");
+  console.log(opacity);
+  if (opacity !== "0") {
+    gallery_item_after.style.opacity = 0;
   } else {
-    console.log("changed opacity to 0 ", gallery_item_after.className);
-    gallery_item_after.classList.remove("gallery-item-after-1");
-    gallery_item_after.classList.add("gallery-item-after-0");
+    gallery_item_after.style.opacity = 1;
   }
-
-  // let gallery_item_after =
-  //   document.getElementsByClassName("gallery-item-after")[itemIndex];
-  // let opacity = window
-  //   .getComputedStyle(gallery_item_after)
-  //   .getPropertyValue("opacity");
-  // console.log(opacity);
-  // if (opacity !== "0") {
-  //   gallery_item_after.style.opacity = 0;
-  // } else {
-  //   gallery_item_after.style.opacity = 1;
-  // }
 };
 
 transformScroll = (event) => {
